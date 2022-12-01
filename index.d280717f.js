@@ -7,7 +7,7 @@ const $1e64527cd714425c$var$icons = {
 TrelloPowerUp.initialize({
     "card-buttons": (t)=>[],
     "board-buttons": (t)=>{
-        console.log($1e64527cd714425c$var$icons);
+        // console.log(icons);
         return [
             {
                 // we can either provide a button that has a callback function
@@ -24,4 +24,4 @@ TrelloPowerUp.initialize({
 });
 
 
-//# sourceMappingURL=index.3916c334.js.map
+//# sourceMappingURL=index.d280717f.js.map

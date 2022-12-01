@@ -1,5 +1,5 @@
 const $1e64527cd714425c$var$icons = {
-    calenderWeek: {
+    calendarWeek: {
         dark: "https://icons.getbootstrap.com/assets/icons/calendar-week-fill.svg",
         light: "https://icons.getbootstrap.com/assets/icons/calendar-week.svg"
     }
@@ -24,4 +24,4 @@ TrelloPowerUp.initialize({
 });
 
 
-//# sourceMappingURL=index.add2d352.js.map
+//# sourceMappingURL=index.3916c334.js.map

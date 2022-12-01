@@ -1,16 +1,18 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css" crossorigin="anonymous">
-        <style>
+        <style>#edit-date button {
+  margin: 1rem;
+}
 
 </style>
         <script src="https://p.trellocdn.com/power-up.min.js" crossorigin="anonymous"></script>
-        <script type="module" src="change-date-dialog.bad6e361.js"></script>
+        <script type="module" src="change-date-dialog.ad80ae17.js"></script>
     </head>
     <body>
         <form id="edit-date">
-
-            <button type="submit" class="mod-primary">Save</button>
+            <button onclick="window.addYear()" class="mod-primary">+1 year</button>
+            <button onclick="window.removeYear()" class="mod-primary">-1 year</button>
         </form>
     </body>
 </html>

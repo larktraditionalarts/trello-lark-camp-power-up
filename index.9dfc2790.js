@@ -61,24 +61,24 @@ $7d39d93f9098a310$export$f7ad0328861e2f03 = $7d39d93f9098a310$var$resolve;
 
 });
 
-var $0bcc0c868d956c45$exports = {};
+var $348644c521010b85$exports = {};
 
-(parcelRequire("aKzDW")).register(JSON.parse('{"aykEV":"index.6c89dff8.js","f1szL":"calendar-week-fill.f6a5fd4c.svg","ca24M":"calendar-week.8804ad50.svg"}'));
+(parcelRequire("aKzDW")).register(JSON.parse('{"aykEV":"index.9dfc2790.js","7YnGh":"calendar-week-black.fe141c96.svg","lYzdV":"calendar-week-white.7a92156f.svg"}'));
 
-var $1a30e11e72f9c8d4$exports = {};
+var $4fec959f05098ead$exports = {};
 
-$1a30e11e72f9c8d4$exports = new URL((parcelRequire("aKzDW")).resolve("f1szL"), import.meta.url).toString();
+$4fec959f05098ead$exports = new URL((parcelRequire("aKzDW")).resolve("7YnGh"), import.meta.url).toString();
 
 
-var $f4b97d8462087a84$exports = {};
+var $4671090a148729ab$exports = {};
 
-$f4b97d8462087a84$exports = new URL((parcelRequire("aKzDW")).resolve("ca24M"), import.meta.url).toString();
+$4671090a148729ab$exports = new URL((parcelRequire("aKzDW")).resolve("lYzdV"), import.meta.url).toString();
 
 
 const $1e64527cd714425c$var$icons = {
     calendarWeek: {
-        light: new URL($1a30e11e72f9c8d4$exports).href,
-        dark: new URL($f4b97d8462087a84$exports).href
+        light: new URL($4fec959f05098ead$exports).href,
+        dark: new URL($4671090a148729ab$exports).href
     }
 };
 TrelloPowerUp.initialize({
@@ -101,4 +101,4 @@ TrelloPowerUp.initialize({
 });
 
 
-//# sourceMappingURL=index.6c89dff8.js.map
+//# sourceMappingURL=index.9dfc2790.js.map

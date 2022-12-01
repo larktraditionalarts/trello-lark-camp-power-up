@@ -1,0 +1,23 @@
+{
+  "name": "trello-lark-camp-power-up",
+  "version": "1.0.0",
+  "description": "Power up to edit due dates",
+  "scripts": {
+    "deploy": "gh-pages -d dist",
+    "build": "parcel build src/html/*.html --no-optimize --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larktraditionalarts/trello-lark-camp-power-up.git"
+  },
+  "author": "Will Wheeler <will@larkcamp.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larktraditionalarts/trello-lark-camp-power-up/issues"
+  },
+  "homepage": "https://github.com/larktraditionalarts/trello-lark-camp-power-up#readme",
+  "devDependencies": {
+    "gh-pages": "^4.0.0",
+    "parcel": "^2.8.0"
+  }
+}

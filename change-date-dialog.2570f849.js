@@ -15,7 +15,7 @@ const $934e8ad3e8eb8cf3$var$msPerYear = 31536000000;
 const $934e8ad3e8eb8cf3$var$editYear = (amount)=>{
     console.log("editing years...");
     $934e8ad3e8eb8cf3$var$toggleLoad();
-    return $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>Promise.all(cards.map((card)=>{
+    return $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>window.TrelloPowerUp.Promise.all(cards.map((card)=>{
             const newDueDateMs = Date.parse(card.due) + amount * $934e8ad3e8eb8cf3$var$msPerYear;
             const newDueDate = new Date(newDueDateMs).toISOString();
             console.log("setting", card.id, "shared", "due", newDueDate);
@@ -36,4 +36,4 @@ $934e8ad3e8eb8cf3$var$t.render(()=>{
 });
 
 
-//# sourceMappingURL=change-date-dialog.893a2ae9.js.map
+//# sourceMappingURL=change-date-dialog.2570f849.js.map

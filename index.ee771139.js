@@ -63,7 +63,7 @@ $7d39d93f9098a310$export$f7ad0328861e2f03 = $7d39d93f9098a310$var$resolve;
 
 var $348644c521010b85$exports = {};
 
-(parcelRequire("aKzDW")).register(JSON.parse('{"aykEV":"index.18fc93ad.js","7YnGh":"calendar-week-black.fe141c96.svg","lYzdV":"calendar-week-white.7a92156f.svg"}'));
+(parcelRequire("aKzDW")).register(JSON.parse('{"aykEV":"index.ee771139.js","7YnGh":"calendar-week-black.fe141c96.svg","lYzdV":"calendar-week-white.7a92156f.svg"}'));
 
 var $4fec959f05098ead$exports = {};
 
@@ -81,11 +81,11 @@ const $1e64527cd714425c$var$icons = {
         dark: new URL($4671090a148729ab$exports).href
     }
 };
-console.log("with edit version 5");
+console.log("with edit version 6");
 TrelloPowerUp.initialize({
     "card-buttons": (t)=>[],
     "board-buttons": ()=>{
-        console.log("with edit version 5");
+        console.log("board buttons loading...");
         return [
             {
                 // we can either provide a button that has a callback function
@@ -102,4 +102,4 @@ TrelloPowerUp.initialize({
 });
 
 
-//# sourceMappingURL=index.18fc93ad.js.map
+//# sourceMappingURL=index.ee771139.js.map

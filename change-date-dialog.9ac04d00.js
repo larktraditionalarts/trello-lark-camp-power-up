@@ -13,23 +13,14 @@ const $934e8ad3e8eb8cf3$var$toggleLoad = ()=>{
 };
 const $934e8ad3e8eb8cf3$var$editYear = (amount)=>{
     $934e8ad3e8eb8cf3$var$toggleLoad();
-    $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>{
-        console.log(JSON.stringify(cards, null, 2));
-        // t.set(card.id, 'shared', '', value)
-        $934e8ad3e8eb8cf3$var$toggleLoad();
-    });
+    $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>Promise.all(cards.map((card)=>{
+            console.log(JSON.stringify(card, null, 2));
+            // t.set(card.id, 'shared', '', value)
+            return Promise.resolve();
+        }))).finally($934e8ad3e8eb8cf3$var$toggleLoad);
 };
-window.addYear = ()=>{
-    $934e8ad3e8eb8cf3$var$toggleLoad();
-    $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>{
-        console.log(JSON.stringify(cards, null, 2));
-        // t.set(card.id, 'shared', '', value)
-        $934e8ad3e8eb8cf3$var$toggleLoad();
-    });
-};
-window.removeYear = ()=>{
-    alert("remove year");
-};
+window.addYear = ()=>$934e8ad3e8eb8cf3$var$editYear(1);
+window.removeYear = ()=>$934e8ad3e8eb8cf3$var$editYear(-1);
 window.unsetCompleted = ()=>{
     alert("unset completed");
     $934e8ad3e8eb8cf3$var$finish();
@@ -42,4 +33,4 @@ $934e8ad3e8eb8cf3$var$t.render(()=>{
 });
 
 
-//# sourceMappingURL=change-date-dialog.ccc2c5e7.js.map
+//# sourceMappingURL=change-date-dialog.9ac04d00.js.map

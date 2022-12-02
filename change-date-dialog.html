@@ -7,12 +7,16 @@
 
 </style>
         <script src="https://p.trellocdn.com/power-up.min.js" crossorigin="anonymous"></script>
-        <script type="module" src="change-date-dialog.5f6762a2.js"></script>
+        <script type="module" src="change-date-dialog.1b29d6f4.js"></script>
     </head>
     <body>
         <form id="edit-date">
             <button onclick="window.addYear()" class="mod-primary">+1 year</button>
             <button onclick="window.removeYear()" class="mod-primary">-1 year</button>
+            <br>
+            <button onclick="window.unsetCompleted()" class="mod-primary">unset completed on all</button>
+            <br>
+            <button onclick="window.closePopup()" class="mod-primary">close</button>
         </form>
     </body>
 </html>

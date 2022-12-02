@@ -11,6 +11,14 @@ const $934e8ad3e8eb8cf3$var$toggleLoad = ()=>{
         el.className = el.className === "hidden" ? "" : "hidden";
     });
 };
+const $934e8ad3e8eb8cf3$var$editYear = (amount)=>{
+    $934e8ad3e8eb8cf3$var$toggleLoad();
+    $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>{
+        console.log(JSON.stringify(cards, null, 2));
+        // t.set(card.id, 'shared', '', value)
+        $934e8ad3e8eb8cf3$var$toggleLoad();
+    });
+};
 window.addYear = ()=>{
     $934e8ad3e8eb8cf3$var$toggleLoad();
     $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>{
@@ -34,4 +42,4 @@ $934e8ad3e8eb8cf3$var$t.render(()=>{
 });
 
 
-//# sourceMappingURL=change-date-dialog.172f2bb8.js.map
+//# sourceMappingURL=change-date-dialog.ccc2c5e7.js.map

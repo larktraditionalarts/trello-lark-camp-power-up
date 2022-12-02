@@ -5,22 +5,33 @@ const $934e8ad3e8eb8cf3$var$finish = ()=>{
 const $934e8ad3e8eb8cf3$var$toggleLoad = ()=>{
     [
         "edit-date",
-        "loading"
+        "loading-message"
     ].forEach((id)=>{
         const el = document.getElementById(id);
         el.className = el.className === "hidden" ? "" : "hidden";
     });
 };
+const $934e8ad3e8eb8cf3$var$setProgressValue = (value)=>{
+    const el = document.getElementById("progress-bar-fill");
+    el.style.width = `${value}%`;
+};
 const $934e8ad3e8eb8cf3$var$msPerYear = 31536000000;
-const $934e8ad3e8eb8cf3$var$editYear = (amount)=>{
+// https://developer.atlassian.com/cloud/trello/guides/rest-api/rate-limits/
+// We can probably get away with less delay, but this is playing it safe safe.
+const $934e8ad3e8eb8cf3$var$delay = 150;
+const $934e8ad3e8eb8cf3$var$matchesYearLabel = /^year:(.*)/;
+const $934e8ad3e8eb8cf3$var$editYear = async (amount)=>{
     console.log("editing years...");
     $934e8ad3e8eb8cf3$var$toggleLoad();
-    return $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>window.TrelloPowerUp.Promise.all(cards.map((card)=>{
-            const newDueDateMs = Date.parse(card.due) + amount * $934e8ad3e8eb8cf3$var$msPerYear;
-            const newDueDate = new Date(newDueDateMs).toISOString();
-            console.log("setting", card.id, "shared", "due", newDueDate);
-            return $934e8ad3e8eb8cf3$var$t.set(card.id, "shared", "due", newDueDate);
-        }))).finally($934e8ad3e8eb8cf3$var$toggleLoad);
+    try {
+        const cards = await $934e8ad3e8eb8cf3$var$t.cards("all");
+        console.log(cards[0]);
+        return;
+    } catch (e) {
+        console.error(e);
+    } finally{
+        $934e8ad3e8eb8cf3$var$toggleLoad();
+    }
 };
 window.addYear = ()=>$934e8ad3e8eb8cf3$var$editYear(1);
 window.removeYear = ()=>$934e8ad3e8eb8cf3$var$editYear(-1);
@@ -36,4 +47,4 @@ $934e8ad3e8eb8cf3$var$t.render(()=>{
 });
 
 
-//# sourceMappingURL=change-date-dialog.2570f849.js.map
+//# sourceMappingURL=change-date-dialog.6a6bd51b.js.map

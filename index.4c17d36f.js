@@ -63,7 +63,7 @@ $7d39d93f9098a310$export$f7ad0328861e2f03 = $7d39d93f9098a310$var$resolve;
 
 var $348644c521010b85$exports = {};
 
-(parcelRequire("aKzDW")).register(JSON.parse('{"aykEV":"index.c1b74552.js","7YnGh":"calendar-week-black.fe141c96.svg","lYzdV":"calendar-week-white.7a92156f.svg"}'));
+(parcelRequire("aKzDW")).register(JSON.parse('{"aykEV":"index.4c17d36f.js","7YnGh":"calendar-week-black.fe141c96.svg","lYzdV":"calendar-week-white.7a92156f.svg"}'));
 
 var $4fec959f05098ead$exports = {};
 
@@ -81,7 +81,7 @@ const $1e64527cd714425c$var$icons = {
         dark: new URL($4671090a148729ab$exports).href
     }
 };
-console.log("Lark Camp PowerUp v7");
+console.log("Lark Camp PowerUp v8");
 TrelloPowerUp.initialize({
     "card-buttons": (t)=>[],
     "board-buttons": ()=>{
@@ -102,4 +102,4 @@ TrelloPowerUp.initialize({
 });
 
 
-//# sourceMappingURL=index.c1b74552.js.map
+//# sourceMappingURL=index.4c17d36f.js.map

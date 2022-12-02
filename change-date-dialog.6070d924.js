@@ -11,12 +11,14 @@ const $934e8ad3e8eb8cf3$var$toggleLoad = ()=>{
         el.className = el.className === "hidden" ? "" : "hidden";
     });
 };
+const $934e8ad3e8eb8cf3$var$msPerYear = 31536000000;
 const $934e8ad3e8eb8cf3$var$editYear = (amount)=>{
     $934e8ad3e8eb8cf3$var$toggleLoad();
     $934e8ad3e8eb8cf3$var$t.cards("all").then((cards)=>Promise.all(cards.map((card)=>{
-            console.log(JSON.stringify(card, null, 2));
-            // t.set(card.id, 'shared', '', value)
-            return Promise.resolve();
+            // console.log(JSON.stringify(card, null, 2));
+            const newDueDateMs = Date.parse(card.due) + amount * $934e8ad3e8eb8cf3$var$msPerYear;
+            const newDueDate = new Date(newDueDateMs).toISOString();
+            return $934e8ad3e8eb8cf3$var$t.set(card.id, "shared", "due", newDueDate);
         }))).finally($934e8ad3e8eb8cf3$var$toggleLoad);
 };
 window.addYear = ()=>$934e8ad3e8eb8cf3$var$editYear(1);
@@ -33,4 +35,4 @@ $934e8ad3e8eb8cf3$var$t.render(()=>{
 });
 
 
-//# sourceMappingURL=change-date-dialog.9ac04d00.js.map
+//# sourceMappingURL=change-date-dialog.6070d924.js.map

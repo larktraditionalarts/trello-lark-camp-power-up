@@ -25,6 +25,7 @@ const $934e8ad3e8eb8cf3$var$editYear = async (amount)=>{
     $934e8ad3e8eb8cf3$var$toggleLoad();
     const cards = await $934e8ad3e8eb8cf3$var$t.cards("all");
     console.log(cards[0]);
+    $934e8ad3e8eb8cf3$var$toggleLoad();
     return;
 };
 window.addYear = ()=>$934e8ad3e8eb8cf3$var$editYear(1);
@@ -38,7 +39,9 @@ window.closePopup = ()=>{
 };
 $934e8ad3e8eb8cf3$var$t.render(()=>{
     $934e8ad3e8eb8cf3$var$t.sizeTo("#edit-date").done();
+    console.log("running edit year");
+    $934e8ad3e8eb8cf3$var$editYear();
 });
 
 
-//# sourceMappingURL=change-date-dialog.003c9b19.js.map
+//# sourceMappingURL=change-date-dialog.b8bae5c0.js.map

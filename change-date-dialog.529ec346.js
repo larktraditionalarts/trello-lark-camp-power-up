@@ -24,7 +24,7 @@ const $934e8ad3e8eb8cf3$var$editYear = async (amount)=>{
     console.log("editing years...");
     $934e8ad3e8eb8cf3$var$toggleLoad();
     const cards = await $934e8ad3e8eb8cf3$var$t.cards("all");
-    console.log(cards[0]);
+    console.log(cards[0], cards[0].labels);
     $934e8ad3e8eb8cf3$var$toggleLoad();
     return;
 };
@@ -44,4 +44,4 @@ $934e8ad3e8eb8cf3$var$t.render(()=>{
 });
 
 
-//# sourceMappingURL=change-date-dialog.b8bae5c0.js.map
+//# sourceMappingURL=change-date-dialog.529ec346.js.map

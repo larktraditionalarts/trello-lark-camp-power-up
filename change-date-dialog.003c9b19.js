@@ -23,15 +23,9 @@ const $934e8ad3e8eb8cf3$var$matchesYearLabel = /^year:(.*)/;
 const $934e8ad3e8eb8cf3$var$editYear = async (amount)=>{
     console.log("editing years...");
     $934e8ad3e8eb8cf3$var$toggleLoad();
-    try {
-        const cards = await $934e8ad3e8eb8cf3$var$t.cards("all");
-        console.log(cards[0]);
-        return;
-    } catch (e) {
-        console.error(e);
-    } finally{
-        $934e8ad3e8eb8cf3$var$toggleLoad();
-    }
+    const cards = await $934e8ad3e8eb8cf3$var$t.cards("all");
+    console.log(cards[0]);
+    return;
 };
 window.addYear = ()=>$934e8ad3e8eb8cf3$var$editYear(1);
 window.removeYear = ()=>$934e8ad3e8eb8cf3$var$editYear(-1);
@@ -47,4 +41,4 @@ $934e8ad3e8eb8cf3$var$t.render(()=>{
 });
 
 
-//# sourceMappingURL=change-date-dialog.6a6bd51b.js.map
+//# sourceMappingURL=change-date-dialog.003c9b19.js.map

@@ -1,27 +1,41 @@
-const WHITE_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-white.svg';
-const BLACK_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-black.svg';
+import { appKey } from './util';
 
+const icons = {
+  calendarWeek: {
+    light: new URL('../images/calendar-week-black.svg', import.meta.url).href,
+    dark: new URL('../images/calendar-week-white.svg', import.meta.url).href,
+  },
+};
+
+const wrapAuth = (t, conf) => t.getRestApi()
+  .isAuthorized()
+  .then((isAuthorized) => {
+    if (isAuthorized) {
+      return conf;
+    }
+
+    return [{
+      text: 'Enable Lark Camp Functionality',
+      callback: tt => tt.popup({
+        title: 'Authorize to continue',
+        url: `./authorize.html?return_url=${window.location.href}`,
+      }),
+    }];
+  });
 
 TrelloPowerUp.initialize({
-  'card-buttons': function(t, options){
-    return [];
-  },
-
-  'board-buttons': function (t, opts) {
-    return [
-      {
-        // we can either provide a button that has a callback function
-        icon: {
-          dark: WHITE_ICON,
-          light: BLACK_ICON
-        },
-        text: 'Callback',
-        callback: (t) => t.popup({
-          title: "Edit due dates",
-          url: 'dialog.html'
-        }),
-        condition: 'always'
-      },
-    ];
-  },
-});
+  // 'card-buttons': (t) => [
+  // ],
+  'board-buttons': t => wrapAuth(t, [
+    {
+      // we can either provide a button that has a callback function
+      icon: icons.calendarWeek,
+      text: 'Setup For Next Camp Year',
+      callback: tt => tt.popup({
+        title: 'Setup For Next Camp',
+        url: 'setup-for-next-year-dialog.html',
+      }),
+      condition: 'signedIn',
+    },
+  ]),
+}, appKey);

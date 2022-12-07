@@ -4,7 +4,7 @@
   "description": "Power up to edit due dates",
   "scripts": {
     "deploy": "gh-pages -d dist",
-    "build": "parcel build src/html/*.html --no-optimize --public-url ./"
+    "build": "rm -rf dist/** && parcel build src/html/*.html --no-optimize --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,13 @@
   },
   "homepage": "https://github.com/larktraditionalarts/trello-lark-camp-power-up#readme",
   "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "gh-pages": "^4.0.0",
     "parcel": "^2.8.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

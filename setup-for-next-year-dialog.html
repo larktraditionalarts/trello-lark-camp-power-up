@@ -1,8 +1,21 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css" crossorigin="anonymous">
-        <style>#edit-date button {
-  margin: 1rem;
+        <style>#edit-date > p {
+  width: 3rem;
+  display: flex;
+}
+
+#edit-date > p > label {
+  min-width: 4.5rem;
+}
+
+#edit-date > p > button {
+  margin: 0 0 12px 5px;
+}
+
+#edit-date > p > input {
+  min-width: 7rem;
 }
 
 .hidden {
@@ -19,7 +32,7 @@
   border: 3px solid #0000004d;
   border-top-color: #000;
   border-radius: 50%;
-  margin: auto;
+  margin: auto auto 1rem;
   animation: 1s ease-in-out infinite spin;
 }
 
@@ -50,18 +63,26 @@
 }
 
 </style>
-        <script src="https://p.trellocdn.com/power-up.min.js" crossorigin="anonymous"></script>
-        <script type="module" src="change-date-dialog.529ec346.js"></script>
+        <script type="module" src="setup-for-next-year-dialog.6554e50f.js"></script><script src="https://p.trellocdn.com/power-up.min.js" crossorigin="anonymous"></script>
+        <script type="module" src="setup-for-next-year-dialog.3058b740.js"></script>
     </head>
     <body>
-        <form id="edit-date">
-            <button onclick="window.addYear()">+1 year</button>
-            <button onclick="window.removeYear()">-1 year</button>
+        <div id="edit-date">
+            <p>
+                <label for="year">Set Year: </label>
+                <input type="number" id="year" name="year" step="1">
+                <button onclick="window.setYear()">Set</button>
+            </p>
+            <!--
+            <button onClick="window.unsetAssigned()">unset assigned on all</button>
+            <br />
+            <button onClick="window.unsetCompleted()">unset completed on all</button>
+            -->
+
             <br>
-            <button onclick="window.unsetCompleted()">unset completed on all</button>
             <br>
             <button onclick="window.closePopup()" class="mod-primary">close</button>
-        </form>
+        </div>
         <div id="loading-message" class="hidden">
             <h1>Do not close this window</h1>
             <div id="loading"></div>

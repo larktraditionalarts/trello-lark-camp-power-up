@@ -61,10 +61,12 @@ $7d39d93f9098a310$export$f7ad0328861e2f03 = $7d39d93f9098a310$var$resolve;
 
 });
 
-var $348644c521010b85$exports = {};
+var $256ed8522371b8ed$exports = {};
 
-(parcelRequire("aKzDW")).register(JSON.parse('{"aykEV":"index.e890912e.js","7YnGh":"calendar-week-black.fe141c96.svg","lYzdV":"calendar-week-white.7a92156f.svg"}'));
+(parcelRequire("aKzDW")).register(JSON.parse('{"aykEV":"index.bac0d9b2.js","7YnGh":"calendar-week-black.fe141c96.svg","lYzdV":"calendar-week-white.7a92156f.svg","dqJmr":"setup-for-next-year-dialog.6554e50f.js"}'));
 
+
+var $722MK = parcelRequire("722MK");
 var $4fec959f05098ead$exports = {};
 
 $4fec959f05098ead$exports = new URL((parcelRequire("aKzDW")).resolve("7YnGh"), import.meta.url).toString();
@@ -81,25 +83,34 @@ const $1e64527cd714425c$var$icons = {
         dark: new URL($4671090a148729ab$exports).href
     }
 };
-console.log("Lark Camp PowerUp v11");
-TrelloPowerUp.initialize({
-    "card-buttons": (t)=>[],
-    "board-buttons": ()=>{
-        console.log("board buttons loading...");
+const $1e64527cd714425c$var$wrapAuth = (t, conf)=>t.getRestApi().isAuthorized().then((isAuthorized)=>{
+        if (isAuthorized) return conf;
         return [
+            {
+                text: "Enable Lark Camp Functionality",
+                callback: (tt)=>tt.popup({
+                        title: "Authorize to continue",
+                        url: `./authorize.html?return_url=${window.location.href}`
+                    })
+            }
+        ];
+    });
+TrelloPowerUp.initialize({
+    // 'card-buttons': (t) => [
+    // ],
+    "board-buttons": (t)=>$1e64527cd714425c$var$wrapAuth(t, [
             {
                 // we can either provide a button that has a callback function
                 icon: $1e64527cd714425c$var$icons.calendarWeek,
-                text: "Shift Dates",
-                callback: (t)=>t.popup({
-                        title: "Edit due dates",
-                        url: "change-date-dialog.html"
+                text: "Setup For Next Camp Year",
+                callback: (tt)=>tt.popup({
+                        title: "Setup For Next Camp",
+                        url: "setup-for-next-year-dialog.html"
                     }),
                 condition: "signedIn"
             }
-        ];
-    }
-});
+        ])
+}, (0, $722MK.appKey));
 
 
-//# sourceMappingURL=index.e890912e.js.map
+//# sourceMappingURL=index.bac0d9b2.js.map
